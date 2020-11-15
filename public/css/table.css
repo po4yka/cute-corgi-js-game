@@ -1,0 +1,45 @@
+#records-info {
+    font-size: xx-large;
+    background-color: #c2d2b2;
+    font-family: 'Montserrat', 'Roboto', Helvetica, sans-serif;
+    text-align: center;
+}
+
+#records-table th,
+#records-table td {
+    padding: 0.25em 0.5em;
+    text-align: left;
+}
+
+#records-table th:nth-child(2),
+#records-table td:nth-child(2) {
+    text-align: right;
+}
+
+#records-table td {
+    background-color: #eee;
+    border: none;
+}
+
+#records-table th {
+    background-color: #cea919;
+    color: #fff;
+    border: none;
+}
+
+#records-table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0.25em 1em;
+    border: none;
+}
+
+#records-table tbody tr:nth-child(odd) {
+    transform: rotate(2deg);
+}
+
+#records-table thead tr,
+#records-table tbody tr:nth-child(even) {
+    transform: rotate(-2deg);
+}

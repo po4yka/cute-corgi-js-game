@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Roboto:wght@300;400&display=swap');
+@import "./btn.css";
+@import "./table.css";
+
+body {
+    font-family: 14px 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: #c2d2b2;
+}
+
+#interact-with-page {
+    width: 1208px;
+    height: 820px;
+    background-color: #edeadf;
+    z-index: 15;
+    position: absolute;
+    border: #ccd4c2
+}
+
+#logo-block {
+    font-family: 'Montserrat', 'Roboto', Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 10%;
+    font-size: xx-large;
+    text-align: center;
+    margin-right: center;
+    margin-left: auto;
+}
+
+#start-logo-img {
+    width: 600;
+    height: 700;
+}
+
+#game-block {
+    width: 1200px;
+    margin: auto;
+}
+
+#game-info-block {
+    margin-top: 300px;
+    margin-left: 400px;
+    position: absolute;
+    width: 400px;
+    border-style: solid;
+    height: 250px;
+    background-color: #c2d2b2;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+#game-info-login {
+    display: none;
+}
+
+#game-info {
+    margin-top: 20%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#hud {
+    text-align: center;
+    background-color: #a2b2b2;
+    font-family: 'Montserrat', 'Roboto', Helvetica, sans-serif;
+    font-size: xx-large;
+    border-radius: 10px;
+    width: 1206px;
+    height: 40px;
+}
+
+#gameCanvas {
+    border-style: solid;
+}
+
+a {
+    color: #00B7FF;
+}

@@ -1,0 +1,19 @@
+{
+    "name": "super_cute_corgi_game",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "kill": "killall -9 /usr/bin/node",
+        "reload": "killall -12 /usr/bin/node",
+        "kill port": "npx kill-port 3000"
+    },
+    "dependencies": {
+        "cookie-parser": "^1.4.5",
+        "debug": "~2.6.9",
+        "express": "~4.16.0",
+        "http-errors": "~1.6.2",
+        "morgan": "~1.9.0",
+        "pug": "^3.0.0"
+    }
+}

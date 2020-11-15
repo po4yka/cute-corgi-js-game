@@ -1,0 +1,32 @@
+extends base
+block body
+    div(id="game-block")
+        div(id="interact-with-page")
+            div(id="logo-block")
+                div
+                    |SUPER CUTE CORGI
+                div
+                    img(id="start-logo-img" src="img/corgi_logo.png")
+                div
+                    button.btn.animated-btn(onclick="startGame();")
+                        |Play
+        div(id="game-info-block")
+            div(id="game-info")
+            div(id="game-info-login")
+        div(id="hud")
+            span Good boy for: 
+            span(id="score") 0
+            span %
+        canvas(id="gameCanvas" width="1200" height="768")
+    script(src="/js/SoundsManager.js")
+    script(src="/js/GameManager.js")
+    script(src="/js/MapManager.js")
+    script(src="/js/PhysicManager.js")
+    script(src="/js/SpriteManager.js")
+    script(src="/js/Entities/Entity.js")
+    script(src="/js/Entities/Enemy.js")
+    script(src="/js/Entities/BonusDuck.js")
+    script(src="/js/Entities/Fireball.js")
+    script(src="/js/Entities/Player.js")
+    script(src="/js/EventsManager.js")
+    script(src="/js/main.js" defer)

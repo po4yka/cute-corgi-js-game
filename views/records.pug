@@ -1,0 +1,18 @@
+extends base
+block body
+    div(id="records-info")
+        h1
+            |Top Players
+        table(id="records-table")
+            thead
+                tr
+                    th(width="300")
+                        |NAME
+                    th(width="300")
+                        |RECORD
+            for record in recordsPairs
+                tr
+                    td #{record[0]}
+                    td #{record[1]}
+        button.btn.animated-btn(onclick="window.location.href = '/'") BACK TO GAME            
+        
