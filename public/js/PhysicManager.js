@@ -24,14 +24,14 @@ class PhysicManager {
             isInAirLeft === this.EMPTY_SPACE &&
             isInAirRight === this.EMPTY_SPACE
         ) { //  object is falling
-            if (obj.type !== "Fireball" && !entityUnder) {
+            if (obj.type !== "Heart" && !entityUnder) {
                 obj.impulse += 0.3;  // add impuls for falling
             }
         } else {
             //  mostly for Enemy with possible direction for move
             if (isInAirLeft === isInAirRight && obj.onTouchMap !== undefined) {
-                if (obj.type !== "Fireball") {
-                    // console.log(`${obj.type} is not fireball`)
+                if (obj.type !== "Heart") {
+                    // console.log(`${obj.type} is not heart`)
                     obj.onTouchMap(isInAirLeft);
                 }
             } else { // change enemy move direction after wall meeting (RIGHT)
@@ -82,7 +82,7 @@ class PhysicManager {
 
         let destTileset = tileset;
 
-        if (obj.type !== "Fireball") {
+        if (obj.type !== "Heart") {
             if (tileset !== this.EMPTY_SPACE) {
                 tileset = this.checkMove(obj, obj.pos_x, newY);
                 if (tileset !== this.EMPTY_SPACE) {
@@ -144,7 +144,6 @@ class PhysicManager {
                 x,
                 y + obj.size_y
             );
-            // if (obj.type === "Fireball") console.log("FIREBALL HERE №1");
         }
 
         if (tileset === this.EMPTY_SPACE) {
@@ -152,7 +151,6 @@ class PhysicManager {
                 x + obj.size_x,
                 y
             );
-            // if (obj.type === "Fireball") console.log("FIREBALL HERE №2");
         }
 
         return tileset;
@@ -178,7 +176,6 @@ class PhysicManager {
                     y > entity.pos_y + entity.size_y
                 )
                     continue;
-                //console.log(x, y, obj.size_x, obj.size_y, entity.pos_x, entity.pos_y, entity.size_x, entity.size_y, entity.name);
                 return entity;
             }
         }

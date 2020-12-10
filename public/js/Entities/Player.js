@@ -112,27 +112,27 @@ class Player extends Entity {
     fire() {
         if (this.fireBlock) return;
 
-        let fireballMove_x = this.move_x;
-        let fireballMove_y = this.move_y;
-        let fireballName = "fireball" + ++this.gameManager.fireNum;
-        let fireball = new Fireball(
-            "Fireball",
-            fireballName,
-            fireballMove_x,
-            fireballMove_y,
+        let heartMove_x = this.move_x;
+        let heartMove_y = this.move_y;
+        let heartName = "Heart_" + ++this.gameManager.fireNum;
+        let heart = new Heart(
+            "Heart",
+            heartName,
+            heartMove_x,
+            heartMove_y,
             0,
             0,
             this.gameManager
         );
         switch (this.move_x + 2 * this.move_y) {
             case -1:
-                fireball.pos_x = this.pos_x - fireball.size_x;
-                fireball.pos_y = this.pos_y + fireball.size_y / 2;
+                heart.pos_x = this.pos_x - heart.size_x;
+                heart.pos_y = this.pos_y + heart.size_y / 2;
                 this.gameManager.soundsManager.playSound("pew");
                 break;
             case 1:
-                fireball.pos_x = this.pos_x + this.size_x;
-                fireball.pos_y = this.pos_y + fireball.size_y / 2;
+                heart.pos_x = this.pos_x + this.size_x;
+                heart.pos_y = this.pos_y + heart.size_y / 2;
                 this.gameManager.soundsManager.playSound("pew");
                 break;
             default:
@@ -143,6 +143,6 @@ class Player extends Entity {
         setTimeout(function () {
             self.fireBlock = false;
         }, 500);
-        this.gameManager.entities.push(fireball);
+        this.gameManager.entities.push(heart);
     }
 }

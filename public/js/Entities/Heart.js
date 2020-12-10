@@ -1,4 +1,4 @@
-class Fireball extends Entity {
+class Heart extends Entity {
     move_x = 0;
     move_y = 0;
     speed = 4;
@@ -6,7 +6,6 @@ class Fireball extends Entity {
     spriteType = null;
 
     constructor(name, type, move_x, move_y, pos_x, pos_y, gameManager) {
-        // console.log('Fireball constructor was called');
         super(name, type, pos_x, pos_y, gameManager);
         let sprite = this.gameManager.spriteManager.getSprite(this.type);
         this.size_x = sprite.w;
@@ -19,9 +18,9 @@ class Fireball extends Entity {
         this.rotateInterval = setInterval(function () {
             spriteCounter++;
             if (spriteCounter === 0) {
-                self.spriteType = "Fireball";
+                self.spriteType = "Heart";
             } else {
-                self.spriteType = `Fireball_${spriteCounter}`;
+                self.spriteType = `Heart_${spriteCounter}`;
             }
             if (spriteCounter === 3) {
                 spriteCounter = 0;
@@ -30,7 +29,6 @@ class Fireball extends Entity {
     }
 
     draw() {
-        // console.log(`Drawing Fireball: ${this.spriteType}`);
         this.gameManager.spriteManager.drawSprite(
             this.spriteType,
             this.pos_x,
@@ -47,7 +45,7 @@ class Fireball extends Entity {
         if (
             obj.type === "Enemy" ||
             obj.type === "Player" ||
-            obj.type === "Fireball"
+            obj.type === "Heart"
         ) {
             this.gameManager.addScore(25);
             obj.kill();
