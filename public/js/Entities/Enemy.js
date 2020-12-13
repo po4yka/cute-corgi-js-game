@@ -7,7 +7,6 @@ class Enemy extends Entity {
     speed = 1;
 
     constructor(lifetime, type, name, pos_x, pos_y, gameManager) {
-        // console.log('Enemy constructor was called');
         super(type, name, pos_x, pos_y, gameManager);
         let sprite = this.gameManager.spriteManager.getSprite(this.type);
         this.size_x = sprite.w;
@@ -17,7 +16,6 @@ class Enemy extends Entity {
     }
 
     draw() {
-        // console.log(`Drawing Enemy: ${this.currentSpriteType}`);
         this.gameManager.spriteManager.drawSprite(
             this.currentSpriteType,
             this.pos_x,
@@ -29,9 +27,6 @@ class Enemy extends Entity {
         this.move_x = this.move_x * -1;
     }
 
-    /**
-     * Rotate direction of enemy moving
-     */
     rotate() {
         console.log('Enemy rotate method was called');
         if (this.currentSpriteType === this.type) {
@@ -46,7 +41,6 @@ class Enemy extends Entity {
     }
 
     onTouchEntity(obj) {
-        // collide entities handle
         if (obj.type === "Player") {
             obj.kill();
         } else if (obj.type === "Enemy" || obj.type === "BonusDuck") {

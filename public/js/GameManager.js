@@ -126,10 +126,8 @@ class GameManager {
     }
 
     update() {
-        // console.log(this.entities)
 
         if (this.player === null) {
-            // alert("WTF IS HAPENNING HERE?!");
             return;
         }
 
@@ -142,9 +140,6 @@ class GameManager {
             }
         }
 
-        //if(this.eventsManager.action["down"])
-        //    this.player.move_y = 1;
-
         if (this.eventsManager.action["left"]) this.player.move_x = -1;
 
         if (this.eventsManager.action["right"]) this.player.move_x = 1;
@@ -155,11 +150,9 @@ class GameManager {
             try {
                 event.update();
                 if (event.type === "Enemy") {
-                    //console.log('THAT WAS ME DIO')
                     event.move_y = 0;
                 }
                 if (event.type === "BonusDuck") {
-                    //console.log('I AM Duck BONUS YA YA')
                     event.move_y = 0;
                 }
             } catch (ex) {
@@ -187,7 +180,6 @@ class GameManager {
     }
 
     draw() {
-        // console.log('Draw from GameManager');
         for (let entityNum = 0; entityNum < this.entities.length; entityNum++) {
             this.entities[entityNum].draw();
         }

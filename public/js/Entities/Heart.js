@@ -37,7 +37,6 @@ class Heart extends Entity {
     }
 
     update() {
-        // update in cycle
         this.gameManager.physicManager.update(this);
     }
 
@@ -51,7 +50,6 @@ class Heart extends Entity {
             obj.kill();
         }
         this.kill();
-        // collide entities handle
     }
 
     onTouchMap(idx) {

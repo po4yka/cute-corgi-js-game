@@ -8,7 +8,6 @@ class PhysicManager {
     }
 
     update(obj) {
-        // console.log(`UPDATING: ${obj.type}`);
 
         let isInAirLeft = this.gameManager.mapManager.getTilesetIdx(
             obj.pos_x,
@@ -103,8 +102,6 @@ class PhysicManager {
             }
         }
 
-        //console.log(obj.name)
-        //console.log(`tileset forward is ${tileset} and entity forward is ${entity}`)
         if (entity !== null && obj.onTouchEntity) {
             obj.onTouchEntity(entity);
         }
@@ -135,7 +132,7 @@ class PhysicManager {
                 y + obj.size_y
             );
             if (tileset !== this.EMPTY_SPACE && obj.type === "Player") {
-                //  console.log("map right");
+                // console.log("map right");
             }
         }
 

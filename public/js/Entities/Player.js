@@ -12,7 +12,6 @@ class Player extends Entity {
     score = 0;
 
     constructor(lifetime, type, name, pos_x, pos_y, gameManager) {
-        // console.log('Player constructor was called');
         super(type, name, pos_x, pos_y, gameManager);
         // Because player character has several possible posisitions, there aren't
         // just "Player" sprite. Consider start sprite is idle in right direction 
@@ -28,21 +27,8 @@ class Player extends Entity {
      * Also based on direction of movement.
      */
     draw() {
-        // console.log(`CHECK: currentSpriteType == |${this.currentSpriteType}|, type == |${this.type}|`);
         this.currentSpriteType = this.type;
-        // console.log(`PLAYER: move_x: ${this.move_x}, move_y: ${this.move_y}`);
         this.currentSpriteType += "_idle";
-        /**
-            if (this.move_x === 0 && this.move_y === 0) {
-                this.currentSpriteType += "_idle";
-            } else if (this.move_y > 0) {
-                this.currentSpriteType += "_jump_up"; 
-            } else if (this.move_y < 0) {
-                this.currentSpriteType += "_jump_down"; 
-            } else if (this.move_x !== 0 && this.move_y === 0) {
-                this.currentSpriteType += "_run";
-            }
-         */
         if (this.move_x < 0) {
             this.currentSpriteType += "_left";
             this.lastSpriteType = this.currentSpriteType;
@@ -63,12 +49,10 @@ class Player extends Entity {
     }
 
     update() {
-        // update in cycle
         this.gameManager.physicManager.update(this);
     }
 
     onTouchEntity(obj) {
-        // collide entities handle
         if (obj.type === "BonusDuck") {
             this.gameManager.soundsManager.playSound("bonus");
             this.gameManager.addScore(50);
@@ -84,13 +68,10 @@ class Player extends Entity {
      * @param {*} tileset 
      */
     onTouchMap(tileset) {
-        // console.log(`PLAYER TOUCH: ${tileset}`);
         if (tileset === LAVA_TILE_ID) {
             console.log('LAVE_TILE was triggered');
             this.kill(false);
         }
-        // END LEVEL
-        // TOGGLE NEXT LEVEL
         if (tileset === EXIT_TILE_ID_1 || tileset === EXIT_TILE_ID_2) {
             console.log('EXIT_TILE was triggered');
             this.kill(true);
