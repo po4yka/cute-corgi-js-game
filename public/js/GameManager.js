@@ -113,7 +113,6 @@ class GameManager {
                     if (self.eventsManager.action["restart"] && !blockRestart) {
                         blockRestart = true;
                         if (self.playInterval === null) {
-                            // disable time for action waiting
                             clearInterval(waitForAction);
                             console.info("RESTART");
                             self.currentLevel = -1;
@@ -156,7 +155,7 @@ class GameManager {
                     event.move_y = 0;
                 }
             } catch (ex) {
-                //console.log(ex)
+                console.log(ex)
             }
         });
 
@@ -169,7 +168,6 @@ class GameManager {
 
         if (this.laterKill.length > 0) this.laterKill.length = 0;
 
-        // FIXME: is it nessasary?
         if (this.player === null) {
             return;
         }
@@ -186,7 +184,7 @@ class GameManager {
     }
 
     showInfo(text, timeout) {
-        this.canvas.style.filter = "blur(7px)";
+        this.canvas.style.filter = "blur(8px)";
         if (timeout === "forever") {
             clearTimeout(this.infoWindowTimeout);
             this.infoWindow.style.display = "block";
@@ -221,7 +219,6 @@ class GameManager {
                     "That was amazing game! Thank you for you time!";
                 break;
         }
-        // tests with start
         let tryStart = setInterval(function () {
             if (
                 self.mapManager.jsonLoaded &&
@@ -294,7 +291,6 @@ class GameManager {
         this.physicManager.EMPTY_SPACE = EMPTY_SPACE_ID;
 
         console.log(`Current lvl: ${this.currentLevel}`);
-        console.info("HERE BEFORE PLAY");
         this.play();
     }
 

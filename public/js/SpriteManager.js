@@ -43,14 +43,12 @@ class SpriteManager {
     }
 
     drawSprite(name, x, y) {
-        // console.log('drawsprite() was called');
         let self = this;
         if (!self.imgLoaded || !self.jsonLoaded) {
             setTimeout(function () {
                 self.drawSprite(self.gameManager.ctx, name, x, y);
             }, 100);
         } else {
-            // console.log(`Getting sprite with name: ${name}`);
             let sprite = self.getSprite(name);
             if (sprite === null) {
                 console.error(`Sprite with name: ${name} doesn't exists!`);
@@ -63,7 +61,6 @@ class SpriteManager {
 
             x -= self.gameManager.mapManager.view.x;
             y -= self.gameManager.mapManager.view.y;
-            // console.log('drawImage from SpriteManager was called');
             self.gameManager.ctx.drawImage(
                 self.image,
                 sprite.x,
@@ -79,11 +76,9 @@ class SpriteManager {
     }
 
     getSprite(name) {
-        // console.log(`getting sprite with name: ${name}`);
         for (let i = 0; i < this.sprites.length; i++) {
             let sprite = this.sprites[i];
             if (sprite.name === name) {
-                // console.log("Sprite was found!");
                 return sprite;
             }
         }

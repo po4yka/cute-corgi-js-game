@@ -68,7 +68,6 @@ class MapManager {
      * @param {CanvasRenderingContext2D} ctx 
      */
     draw(ctx) {
-        // console.log("Draw from MapManager was called");
         let self = this;
         if (!self.imgLoaded || !self.jsonLoaded) {
             setTimeout(function () {
@@ -98,7 +97,6 @@ class MapManager {
                     pX -= this.view.x;
                     pY -= this.view.y;
 
-                    // console.log("drawImage from MapMager was called");
                     ctx.drawImage(
                         tile.img,
                         tile.px,

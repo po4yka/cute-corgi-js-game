@@ -30,7 +30,6 @@ class PhysicManager {
             //  mostly for Enemy with possible direction for move
             if (isInAirLeft === isInAirRight && obj.onTouchMap !== undefined) {
                 if (obj.type !== "Heart") {
-                    // console.log(`${obj.type} is not heart`)
                     obj.onTouchMap(isInAirLeft);
                 }
             } else { // change enemy move direction after wall meeting (RIGHT)
@@ -54,15 +53,12 @@ class PhysicManager {
                 // move down
                 multiplierY = obj.impulse;
                 obj.move_y = 1;
-                // console.log(obj)
-                // obj.impulse -= 0.3;
             }
 
             if (obj.impulse < 0) {
                 // move up
                 multiplierY = -obj.impulse;
                 obj.move_y = -1;
-                //console.log(obj);
                 obj.impulse += 0.3;
             }
         }
@@ -107,9 +103,6 @@ class PhysicManager {
         }
 
         if (destTileset !== this.EMPTY_SPACE && obj.onTouchMap) {
-            // if (obj.type === 'Enemy') {
-            //     console.log(`${obj.name} touched the wall`);
-            // }
             obj.onTouchMap(destTileset);
         }
 
